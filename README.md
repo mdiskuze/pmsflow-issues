@@ -44,111 +44,170 @@
   If you found a potential security/privacy vulnerability, please **do not** post it publicly in Issues.
   Contact the maintainer privately.
 
-  ## User Guide
+# PMS Flow - App Guide 🌸
 
-  End-user documentation is available in [`USER_MANUAL.md`](./USER_MANUAL.md).
+Welcome to **PMS Flow**, an app for tracking menstrual cycles, symptoms, predictions, and statistics.
 
-  USER_MANUAL.md
+Meaning of `PMS` in the app branding:
+- **EN:** `Period Management System`
+- **CZ:** `Parťačka Měsíčního Sledování`
 
-  # PMS Flow - User Manual
+---
 
-  ## 1. What PMS Flow Does
+## 📱 Features
 
-  PMS Flow helps you:
+### 🧭 Navigation
+- Primary sections are available directly from the bottom bar:
+  - Calendar
+  - Statistics
+  - Shared
+  - Backup
+  - How-to
+- On larger screens (sw600dp+), the app uses a left Navigation Rail for the same primary sections.
+- The side drawer is kept for secondary items (Settings, About).
 
-  - track period starts/ends
-  - log daily symptoms
-  - view cycle predictions
-  - view fertility window estimates
-  - back up and restore your data
+### 🗓️ Calendar
+- Color-coded day types:
+  - 🔴 **Menstruation**
+  - 🩷 **Predicted period (light red)**
+  - 🟢 **Fertile days**
+  - 🔵 **Ovulation**
+  - 🟣 **Symptom indicator**
+- Tap any day to open day details.
+- Long press any calendar day to open day quick actions (start/end/open detail based on context).
+- Day-detail actions are shown as clear buttons (unified UX).
+- Weekday labels and cycle status text are localized consistently in both main and shared calendars.
+- The FAB ➕ allows:
+  - "Log period start and end"
+  - "Log pregnancy"
+- Long press FAB ➕ triggers the fastest quick action for today.
 
-  PMS Flow is a tracking and estimation app. It is **not** a medical diagnosis tool.
+### 🩸 Menstruation
+- Log period start with an optional end date.
+- Supports the "Ongoing" state (no end date yet).
+- Bleeding intensity supports:
+  - overall intensity for the record
+  - optional per-day override for a specific day
+- Calendar shows an intensity indicator directly on period days.
 
-  ---
+### ✏️ Edit and Delete
+- From day detail you can:
+  - edit the record
+  - edit bleeding intensity for that day
+  - add/edit symptoms
+  - delete a record
+- For multi-day records, you can delete:
+  - a single day only
+  - or the whole record
+- If a day has no period record, edit actions are hidden and only valid actions are shown.
 
-  ## 2. Quick Start
+### 🤰 Pregnancy
+- You can log pregnancy manually.
+- After the first post-pregnancy period is logged, active pregnancy is closed automatically.
+- In statistics, the gap is compressed to keep charts comparable.
 
-  1. Open the app and go to **Calendar**.
-  2. Tap **+** and log your period start.
-  3. If your period is still active, keep end date as **Ongoing**.
-  4. Add symptoms daily to improve personal insights over time.
+### 😊 Symptoms
+- Track:
+  - abdominal pain
+  - mood
+  - energy
+  - notes
+- Days with symptoms are marked in the calendar.
+- Tapping a day shows the exact stored symptom values.
 
-  ---
+### 📊 Predictions
+- Estimates for next period, ovulation, and fertile window.
+- Prediction confidence is shown (LOW/MEDIUM/HIGH).
+- Prediction date uses standard local format (e.g. `5. 4. 2026`).
+- Ovulation/fertile calculation is aligned consistently across prediction modes.
+- Fertile-window behavior can be configured in Settings:
+  - **Standard (6 days):** 5 days before ovulation + ovulation day
+  - **Conservative (wider):** wider uncertainty window for variable cycles
+- **Gradual fertility** only changes color intensity, not the number of marked days.
+- Gradual fertility tint is rendered as a smooth progression (lighter to darker) toward peak fertility.
 
-  ## 3. Main Screens
+### 🔔 Notifications
+- Period reminders
+- Symptom reminders
+- Fertile window reminders
+- Late-period reminder:
+  - after 7 days late
+  - once per expected cycle
+  - separately toggleable in settings
 
-  ## Calendar
-  - Daily overview of period, predicted days, and fertility estimates.
-  - Tap a day to view details and edit records.
+### 🔐 App Lock
+- Optional app lock can be enabled in **Settings > Security**.
+- Supported unlock methods:
+  - Biometric authentication
+  - PIN (4+ digits)
+- When enabled, app unlock is required after returning from background.
 
-  ## Statistics
-  - Cycle trends and symptom patterns.
-  - Insight cards based on your logged history.
+### 💾 Backup and Restore
+- Personal backup/restore for **CSV** and **JSON** is in **Backup**.
+- Useful for backup or further analysis.
 
-  ## Backup
-  - Export your data (CSV/JSON).
-  - Import data when needed.
+### 🤝 Local Sharing (Read-Only)
+- In **Shared**, you can export/import **Share snapshot (.pmsshare)** for partner/family use.
+- Share options:
+  - optional profile alias
+  - include/exclude symptoms
+  - include/exclude notes
+- Import `.pmsshare` creates a **read-only shared profile** (separate from your own records).
+- Shared entries can be:
+  - opened in read-only month calendar
+  - renamed locally
+  - assigned relationship label (partner/daughter/family/other)
+  - filtered in list
+  - sorted (updated/name/relationship)
+  - deleted locally
+- Shared profile cards display `last sync`.
+- Optional behavior in Shared Profiles: keep snapshot history instead of overwriting by sender.
+- `.pmsshare` can be opened directly in PMS from Android share/file apps (when PMS is selected as target).
+- Full practical flow guide (EN): `SHARING_GUIDE.md`
+- Full practical flow guide (CS): `SHARING_GUIDE_CS.md`
 
-  ## Shared Profiles
-  - Import shared snapshots (`.pmsshare`) in read-only mode.
+---
 
-  ## How-to Guides
-  - Practical guidance for common situations (first period log, irregular cycle mode, ongoing period, backup basics).
+## 🎨 Color Guide
 
-  ---
+### Calendar
+- 🔴 Menstruation
+- 🩷 Predicted period (light red)
+- 🟢 Fertile days
+- 🔵 Ovulation
+- 🟣 Symptoms
 
-  ## 4. Logging Period Data
+### Charts and Statistics
+- Trends for cycle length, period length, and symptoms.
+- Time-range filter: 3 / 6 / 12 months / all.
 
-  - Use **Log period start** when bleeding begins.
-  - Set end date when bleeding stops.
-  - For ongoing bleeding, leave end date empty and update later.
-  - If cycle timing changes (earlier/later), log real dates; predictions will adapt.
+---
 
-  ---
+## ⚙️ Technical Info
 
-  ## 5. Predictions and Fertility Estimates
+- **Minimum Android:** 8.0 (API 26)
+- Data is stored locally (Room DB)
+- Export uses Android system sharing
 
-  - Predicted dates are estimates based on your history.
-  - Confidence depends on consistency and number of recorded cycles.
-  - Fertility window and ovulation markers are estimates, not guarantees.
-  - You can adjust prediction settings in **Settings > Cycle predictions**.
+---
 
-  ---
+## 🔒 Privacy
 
-  ## 6. Notifications
+- Data stays locally on the device
+- The app is not a medical device
+- Predictions are estimates based on historical data
 
-  In **Settings**, you can enable/disable reminders for:
+---
 
-  - period
-  - late period check
-  - symptoms
-  - fertile window
+## 🧾 Versioning
 
-  You can also set reminder timing.
-
-  ---
-
-  ## 7. Backup and Restore
-
-  - Use **Backup** to create personal backups (CSV/JSON).
-  - Keep backups in a safe location.
-  - Shared snapshot files (`.pmsshare`) are handled in **Shared Profiles**.
-
-  ---
-
-  ## 8. Privacy and Safety
-
-  - Avoid sharing exported data unless necessary.
-  - Remove identifying info before sharing screenshots/issues.
-  - If your cycle changes are unusual for you, or symptoms are severe, consult a healthcare professional.
-
-  ---
-
-  ## 9. Troubleshooting
-
-  If something looks wrong:
-
-  1. Confirm app version in **About**.
-  2. Re-check the logged period dates.
-  3. Ensure ongoing period entries are correctly closed.
-  4. If issue persists, open a ticket in this repository and include reproduction steps.
+- **App version:** managed via `gradle.properties` (`APP_VERSION_NAME` / `APP_VERSION_CODE`)
+<!-- release:auto:start -->
+- **Current release:** `1.1.11`
+- **Last update:** `2026-02-23`
+- **Release source:** `app/CHANGELOG.md`
+- **Generated latest metadata:** `release/latest_release.json`
+- **Generated GitHub release body:** `release/github_release_body.md`
+- **Generate command:** `./scripts/release_prepare.sh`
+<!-- release:auto:end -->
+- **Change history:** see `CHANGELOG.md`
