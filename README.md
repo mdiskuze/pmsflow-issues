@@ -201,13 +201,7 @@ Meaning of `PMS` in the app branding:
 
 ## 🧾 Versioning
 
-- **App version:** managed via `gradle.properties` (`APP_VERSION_NAME` / `APP_VERSION_CODE`)
-<!-- release:auto:start -->
-- **Current release:** `1.1.11`
-- **Last update:** `2026-02-23`
-- **Release source:** `app/CHANGELOG.md`
-- **Generated latest metadata:** `release/latest_release.json`
-- **Generated GitHub release body:** `release/github_release_body.md`
-- **Generate command:** `./scripts/release_prepare.sh`
-<!-- release:auto:end -->
-- **Change history:** see `CHANGELOG.md`
+- **Current release:** `1.2.0`
+- **Last update:** `2026-05-07`
+- **Latest APK:** [Releases page](https://github.com/mdiskuze/pmsflow-issues/releases/latest)
+- **Release notes:** see the [Releases](https://github.com/mdiskuze/pmsflow-issues/releases) tab on this repository
