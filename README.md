@@ -1,207 +1,149 @@
-  # PMS Flow - Public Issue Tracker
+# PMS Flow
 
-  This repository is the public issue tracker for **PMS Flow**.
+A privacy-first menstrual cycle tracker for Android. Local data only,
+no cloud sync, no ads, no paywalls.
 
-  ## Purpose
+This repository is **not the source code** — it's the public space for
+release downloads, issue reports, feedback, and the user guide.
 
-  Use this repository to:
-
-  - report bugs
-  - suggest improvements
-  - request new features
-  - share usability feedback
-
-  This repository does **not** contain the application source code.
-
-  ## Before You Open an Issue
-
-  Please check existing issues first to avoid duplicates.
-
-  When reporting a bug, include:
-
-  - App version (for example: `1.1.2`)
-  - Device model
-  - Android version
-  - Steps to reproduce
-  - Expected behavior
-  - Actual behavior
-  - Screenshot/video (if possible)
-
-  ## Feature Requests
-
-  Please describe:
-
-  - the problem you are trying to solve
-  - your proposed solution
-  - why it would be useful in real-life use
-
-  ## Privacy Notice
-
-  Do not post personal or sensitive data (health details, names, emails, phone numbers, exported records).
-
-  ## Security
-
-  If you found a potential security/privacy vulnerability, please **do not** post it publicly in Issues.
-  Contact the maintainer privately.
-
-# PMS Flow - App Guide 🌸
-
-Welcome to **PMS Flow**, an app for tracking menstrual cycles, symptoms, predictions, and statistics.
-
-Meaning of `PMS` in the app branding:
-- **EN:** `Period Management System`
-- **CZ:** `Parťačka Měsíčního Sledování`
+➡️ **[Latest release](../../releases/latest)** — install the APK directly,
+or [open an issue](../../issues/new) to report a bug or suggest a feature.
 
 ---
 
-## 📱 Features
+## English
 
-### 🧭 Navigation
-- Primary sections are available directly from the bottom bar:
-  - Calendar
-  - Statistics
-  - Shared
-  - Backup
-  - How-to
-- On larger screens (sw600dp+), the app uses a left Navigation Rail for the same primary sections.
-- The side drawer is kept for secondary items (Settings, About).
+### What PMS Flow does
 
-### 🗓️ Calendar
-- Color-coded day types:
-  - 🔴 **Menstruation**
-  - 🩷 **Predicted period (light red)**
-  - 🟢 **Fertile days**
-  - 🔵 **Ovulation**
-  - 🟣 **Symptom indicator**
-- Tap any day to open day details.
-- Long press any calendar day to open day quick actions (start/end/open detail based on context).
-- Day-detail actions are shown as clear buttons (unified UX).
-- Weekday labels and cycle status text are localized consistently in both main and shared calendars.
-- The FAB ➕ allows:
-  - "Log period start and end"
-  - "Log pregnancy"
-- Long press FAB ➕ triggers the fastest quick action for today.
+- **Tracks your cycle.** Log periods (with start and optional end), flow
+  intensity per day, symptoms (cramps, mood, energy, mid-cycle pain,
+  cervical mucus, basal body temperature, free-form notes), and pregnancies.
+- **Predicts the next period and ovulation window.** The prediction is
+  shown with a confidence level and an honest plus/minus range — wider
+  for predictions further into the future.
+- **Pinpoints ovulation when you log fertility signals.** When you log
+  mid-cycle pain, fertile-type cervical mucus, or basal body temperature
+  near the predicted ovulation, the app uses your observation to sharpen
+  the day. You don't have to log any of these — they're optional.
+- **Calendar with colour-coded days.** Period days, predicted period,
+  fertile window, ovulation day, and pregnancy days are all distinct.
+  A gradient on the fertile window shows day-by-day fertility.
+- **Statistics and insights.** See your average cycle and period length,
+  cycle variability, and trends over time. The full multi-year history
+  stays visible — only the prediction model itself focuses on your most
+  recent cycles, so it reacts faster when your cycle changes.
+- **Notifications.** Optional reminders for period start, fertile window,
+  symptom logging, and a once-per-cycle late-period nudge.
+- **Backup and restore.** Export to CSV or JSON; import the same files
+  back. Your data, your control.
+- **Read-only sharing with a partner or family.** Generate a `.pmsshare`
+  snapshot they can open in their own app — no account, no cloud.
+  The receiver sees your shared data but can't change it.
+- **App lock.** Optional biometric or PIN lock that triggers when the app
+  goes to the background.
 
-### 🩸 Menstruation
-- Log period start with an optional end date.
-- Supports the "Ongoing" state (no end date yet).
-- Bleeding intensity supports:
-  - overall intensity for the record
-  - optional per-day override for a specific day
-- Calendar shows an intensity indicator directly on period days.
+### Privacy
 
-### ✏️ Edit and Delete
-- From day detail you can:
-  - edit the record
-  - edit bleeding intensity for that day
-  - add/edit symptoms
-  - delete a record
-- For multi-day records, you can delete:
-  - a single day only
-  - or the whole record
-- If a day has no period record, edit actions are hidden and only valid actions are shown.
+PMS Flow keeps everything **on your device**. No analytics, no ads, no
+third-party tracking, no cloud sync. The app does not need network
+permission for its core features — the only network request it ever
+makes is the optional version-update check against this public release
+list.
 
-### 🤰 Pregnancy
-- You can log pregnancy manually.
-- After the first post-pregnancy period is logged, active pregnancy is closed automatically.
-- In statistics, the gap is compressed to keep charts comparable.
+The on-device database is encrypted at rest on Android 15 and below.
+On Android 16+, encryption is currently disabled because the underlying
+library is not yet compatible with the new platform — the file is
+still in the app's private storage where only this app can read it.
 
-### 😊 Symptoms
-- Track:
-  - abdominal pain
-  - mood
-  - energy
-  - notes
-- Days with symptoms are marked in the calendar.
-- Tapping a day shows the exact stored symptom values.
+### How to report something
 
-### 📊 Predictions
-- Estimates for next period, ovulation, and fertile window.
-- Prediction confidence is shown (LOW/MEDIUM/HIGH).
-- Prediction date uses standard local format (e.g. `5. 4. 2026`).
-- Ovulation/fertile calculation is aligned consistently across prediction modes.
-- Fertile-window behavior can be configured in Settings:
-  - **Standard (6 days):** 5 days before ovulation + ovulation day
-  - **Conservative (wider):** wider uncertainty window for variable cycles
-- **Gradual fertility** only changes color intensity, not the number of marked days.
-- Gradual fertility tint is rendered as a smooth progression (lighter to darker) toward peak fertility.
+Bug, feature idea, usability feedback — open an issue here. When
+reporting a bug, include:
 
-### 🔔 Notifications
-- Period reminders
-- Symptom reminders
-- Fertile window reminders
-- Late-period reminder:
-  - after 7 days late
-  - once per expected cycle
-  - separately toggleable in settings
+- App version (for example `1.3.0`)
+- Device model
+- Android version
+- Steps that lead to the problem
+- What you expected to happen
+- What actually happened
+- A screenshot or short screen recording, if you can attach one
 
-### 🔐 App Lock
-- Optional app lock can be enabled in **Settings > Security**.
-- Supported unlock methods:
-  - Biometric authentication
-  - PIN (4+ digits)
-- When enabled, app unlock is required after returning from background.
+**Please don't paste personal data in issues** (health information,
+names, emails, exported records). If you want to share a backup file
+for diagnosis, we'll arrange a private channel.
 
-### 💾 Backup and Restore
-- Personal backup/restore for **CSV** and **JSON** is in **Backup**.
-- Useful for backup or further analysis.
+### Security
 
-### 🤝 Local Sharing (Read-Only)
-- In **Shared**, you can export/import **Share snapshot (.pmsshare)** for partner/family use.
-- Share options:
-  - optional profile alias
-  - include/exclude symptoms
-  - include/exclude notes
-- Import `.pmsshare` creates a **read-only shared profile** (separate from your own records).
-- Shared entries can be:
-  - opened in read-only month calendar
-  - renamed locally
-  - assigned relationship label (partner/daughter/family/other)
-  - filtered in list
-  - sorted (updated/name/relationship)
-  - deleted locally
-- Shared profile cards display `last sync`.
-- Optional behavior in Shared Profiles: keep snapshot history instead of overwriting by sender.
-- `.pmsshare` can be opened directly in PMS from Android share/file apps (when PMS is selected as target).
-- Full practical flow guide (EN): `SHARING_GUIDE.md`
-- Full practical flow guide (CS): `SHARING_GUIDE_CS.md`
+Found something that looks like a security or privacy hole? Don't post
+it publicly — contact the maintainer privately first.
 
 ---
 
-## 🎨 Color Guide
+## Česky
 
-### Calendar
-- 🔴 Menstruation
-- 🩷 Predicted period (light red)
-- 🟢 Fertile days
-- 🔵 Ovulation
-- 🟣 Symptoms
+### Co PMS Flow umí
 
-### Charts and Statistics
-- Trends for cycle length, period length, and symptoms.
-- Time-range filter: 3 / 6 / 12 months / all.
+- **Sleduje tvůj cyklus.** Zaznamenávej menstruaci (začátek, volitelný
+  konec), intenzitu krvácení po dnech, symptomy (bolesti, nálada,
+  energie, ovulační bolest uprostřed cyklu, cervikální hlen, bazální
+  tělesná teplota, vlastní poznámky) a těhotenství.
+- **Předpovídá další menstruaci a okno ovulace.** Předpověď je zobrazena
+  s úrovní jistoty a poctivým rozptylem ± dní — pro vzdálenější
+  předpovědi širší.
+- **Zpřesňuje den ovulace podle tvých záznamů plodnosti.** Když
+  zaznamenáš ovulační bolest, plodný typ cervikálního hlenu nebo
+  bazální tělesnou teplotu v okolí předpovídané ovulace, aplikace tu
+  konkrétní událost využije k zúžení okna na konkrétní den. Žádný
+  z těchto záznamů není povinný — jsou volitelné.
+- **Kalendář s barevně odlišenými dny.** Menstruační dny, předpovídaná
+  menstruace, plodné okno, den ovulace a dny těhotenství jsou
+  rozlišitelné. Barevný gradient v plodném okně ukazuje pravděpodobnost
+  otěhotnění po jednotlivých dnech.
+- **Statistiky a přehledy.** Průměrná délka cyklu, délka menstruace,
+  variabilita, trendy v čase. Plnou víceletou historii máš stále
+  viditelnou — predikční model se ale zaměřuje na nedávné cykly, takže
+  rychleji reaguje, když se ti cyklus mění.
+- **Notifikace.** Volitelné připomenutí menstruace, plodného okna,
+  záznamu symptomů a jednorázové upozornění při zpožděné menstruaci.
+- **Záloha a obnova.** Export do CSV nebo JSON; import stejných souborů
+  zpět. Tvá data, tvoje kontrola.
+- **Sdílení s partnerem/rodinou jen ke čtení.** Vygeneruješ snímek
+  `.pmsshare`, který si otevřou ve své vlastní aplikaci — bez účtu,
+  bez cloudu. Příjemce vidí sdílená data, ale nemůže je změnit.
+- **Zámek aplikace.** Volitelné odemykání otiskem prstu / obličejem nebo
+  PINem při návratu z pozadí.
 
----
+### Soukromí
 
-## ⚙️ Technical Info
+PMS Flow drží všechno **u tebe v telefonu**. Žádná analytika, žádné
+reklamy, žádný tracking třetích stran, žádná cloudová synchronizace.
+Aplikace pro svou hlavní funkci nepotřebuje připojení k internetu —
+jediné, co kdy na síť posílá, je volitelná kontrola dostupnosti nové
+verze proti tomuto veřejnému seznamu.
 
-- **Minimum Android:** 8.0 (API 26)
-- Data is stored locally (Room DB)
-- Export uses Android system sharing
+Databáze v telefonu je na Androidu 15 a starším šifrovaná. Na
+Androidu 16+ je šifrování zatím vypnuté, protože použitá knihovna
+není kompatibilní s novou platformou — soubor je nicméně stále uložen
+v privátním úložišti aplikace, kam má přístup jen ona.
 
----
+### Jak něco nahlásit
 
-## 🔒 Privacy
+Chyba, nápad, zpětná vazba — otevři issue tady. Když hlásíš chybu,
+přidej prosím:
 
-- Data stays locally on the device
-- The app is not a medical device
-- Predictions are estimates based on historical data
+- Verzi aplikace (např. `1.3.0`)
+- Model telefonu
+- Verzi Androidu
+- Postup, který k problému vede
+- Co jsi očekávala
+- Co se ve skutečnosti stalo
+- Screenshot nebo krátké video, pokud je můžeš přiložit
 
----
+**Prosím nelep do issue osobní údaje** (zdravotní informace, jména,
+e-maily, exportované záznamy). Pokud potřebuješ poslat zálohu pro
+diagnostiku, domluvíme privátní kanál.
 
-## 🧾 Versioning
+### Bezpečnost
 
-- **Current release:** `1.2.0`
-- **Last update:** `2026-05-07`
-- **Latest APK:** [Releases page](https://github.com/mdiskuze/pmsflow-issues/releases/latest)
-- **Release notes:** see the [Releases](https://github.com/mdiskuze/pmsflow-issues/releases) tab on this repository
+Pokud najdeš něco, co vypadá jako bezpečnostní nebo soukromá díra,
+nepiš to prosím veřejně — kontaktuj nejdřív tvůrce soukromou cestou.
