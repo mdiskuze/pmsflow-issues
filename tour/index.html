@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PMS Flow - guided tour of the app</title>
+<meta name="description" content="A cycle tracker for Android that keeps everything on your phone. Every screen and every setting of PMS Flow explained, with pictures.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="PMS Flow - guided tour of the app">
+<meta property="og:description" content="Period tracking, symptoms and estimates that say how sure they are. No account, no cloud.">
+<meta property="og:image" content="https://mdiskuze.github.io/pmsflow/tour/img/en/calendar.jpg">
+<link rel="canonical" href="https://mdiskuze.github.io/pmsflow/tour/">
+<link rel="alternate" hreflang="en" href="https://mdiskuze.github.io/pmsflow/tour/">
+<link rel="alternate" hreflang="cs" href="https://mdiskuze.github.io/pmsflow/tour/cs/">
+<link rel="alternate" hreflang="x-default" href="https://mdiskuze.github.io/pmsflow/tour/">
+<style>
+:root{
+  --ground:#fbf8f5; --surface:#f3efea; --surface-2:#ece6df; --ink:#1d1b19; --ink-2:#57514b; --line:#ddd5cc;
+  --accent:#8a5200; --accent-ink:#ffffff; --peach:#fbe2c8;
+  --shadow:0 1px 2px rgba(60,40,20,.08),0 12px 32px -12px rgba(60,40,20,.28);
+  --radius:24px; --max:1120px;
+  --font:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --ground:#16130f; --surface:#211c17; --surface-2:#2b251f; --ink:#f3ebe3; --ink-2:#bdb2a6; --line:#3a322a;
+    --accent:#f0b56b; --accent-ink:#2a1700; --peach:#3a2a19; --shadow:0 12px 32px -12px rgba(0,0,0,.7);
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:120px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--ground);color:var(--ink);font:400 17px/1.6 var(--font);-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--accent)}
+h1,h2{line-height:1.12;letter-spacing:-.02em;margin:0}
+p{margin:0}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:8px}
+
+.top{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--ground) 90%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:16px;min-height:60px;padding-top:6px;padding-bottom:6px}
+.brand{font-weight:700;font-size:20px;letter-spacing:-.02em;display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none}
+.brand svg{width:28px;height:28px}
+.langs{margin-left:auto;display:flex;gap:2px}
+.langs a{font-size:13px;font-weight:700;letter-spacing:.06em;color:var(--ink-2);text-decoration:none;padding:10px 12px;min-height:44px;display:inline-flex;align-items:center;border-radius:999px}
+.langs a[aria-current="true"]{color:var(--ink);background:var(--surface-2)}
+.langs a:hover{background:var(--surface)}
+.chapters{border-top:1px solid var(--line);overflow-x:auto;scrollbar-width:none}
+.chapters::-webkit-scrollbar{display:none}
+.chapters .wrap{display:flex;flex-wrap:nowrap;gap:4px;padding-top:6px;padding-bottom:6px}
+.chapters a{white-space:nowrap;text-decoration:none;color:var(--ink-2);font-size:14px;font-weight:600;padding:9px 12px;border-radius:999px;min-height:40px;display:inline-flex;align-items:center}
+.chapters a:hover{background:var(--surface)}
+.chapters a.on{background:var(--peach);color:var(--ink)}
+
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+.lead{font-size:19px;color:var(--ink-2);max-width:60ch;margin-top:14px}
+.hero{padding:56px 0 40px;background:linear-gradient(180deg,var(--peach),var(--ground))}
+.hero h1{font-size:clamp(34px,6vw,60px);max-width:16ch}
+.pledges{list-style:none;padding:0;margin:26px 0 0;display:flex;flex-wrap:wrap;gap:10px}
+.pledges li{background:var(--ground);border:1px solid var(--line);border-radius:999px;padding:9px 16px;font-weight:600;font-size:15px}
+.note{margin-top:22px;font-size:15px;color:var(--ink-2);max-width:62ch}
+
+.chapter{padding:56px 0;border-top:1px solid var(--line)}
+.chapter .wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:40px;align-items:start}
+.chapter h2{font-size:clamp(26px,4vw,38px)}
+.chapter ul{padding-left:1.2em;margin:18px 0 0;display:grid;gap:10px}
+.chapter li::marker{color:var(--accent)}
+.shots{display:flex;flex-wrap:wrap;gap:18px;justify-content:center}
+figure{margin:0;width:min(100%,210px)}
+figure img{border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid var(--line)}
+figcaption{font-size:13.5px;color:var(--ink-2);margin-top:8px;line-height:1.4;text-align:center}
+.chapter.alt{background:var(--surface)}
+.privacy-link{display:inline-flex;margin-top:18px;background:var(--accent);color:var(--accent-ink);font-weight:700;text-decoration:none;padding:12px 20px;border-radius:999px;min-height:44px;align-items:center}
+footer{border-top:1px solid var(--line);padding:32px 0 48px;color:var(--ink-2);font-size:15px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px}
+@media (max-width:860px){
+  .chapter .wrap{grid-template-columns:1fr;gap:26px}
+  .chapter{padding:40px 0}
+  .shots{justify-content:flex-start}
+}
+@media (max-width:420px){figure{width:calc(50% - 9px)}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="#top" aria-label="PMS Flow"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C11 10 7 14.5 7 19.5a9 9 0 0 0 18 0C25 14.5 21 10 16 3z" fill="var(--accent)"/></svg> PMS Flow</a><nav class="langs" aria-label="Language"><a href="./" hreflang="en" lang="en" aria-current="true">EN</a><a href="cs/" hreflang="cs" lang="cs">CS</a></nav></div><nav class="chapters" aria-label="Chapters"><div class="wrap"><a href="#calendar">Calendar</a><a href="#log">Logging</a><a href="#estimates">Estimates</a><a href="#stats">Statistics</a><a href="#shared">Sharing</a><a href="#backup">Backup</a><a href="#settings">Settings</a><a href="#help">Help</a><a href="#privacy">Privacy</a></div></nav></header><main id="top"><section class="hero"><div class="wrap"><p class="eyebrow">Cycle tracker for Android</p><h1>A cycle tracker that keeps your data on your phone</h1><p class="lead">PMS Flow keeps track of your periods, symptoms and estimates. Everything stays on your phone, there is no account and no cloud.</p><ul class="pledges"><li>No account, no cloud</li><li>No advertising, no analytics</li><li>Backups you can protect with your own password</li><li>In English and Czech</li></ul><p class="note">PMS Flow is not a medical device. Estimates are estimates, and they are not a method of contraception. Android 8.0 or newer.</p></div></section><section class="chapter" id="calendar"><div class="wrap"><div class="text"><p class="eyebrow">Calendar</p><h2>A calendar that shows where you are in your cycle</h2><p class="lead">The calendar opens with the cycle ring: the day of the running cycle, the phase you are in and the estimate of the next period.</p><ul><li>Colours tell the days apart: period, predicted period (a dashed outline), fertile window, ovulation, symptoms and pregnancy.</li><li>Days of the same kind form one band, so a period or a fertile window reads at a glance.</li><li>The legend under the month switches kinds on and off. The filter button next to Today opens the same switches in one list.</li><li>Tap a day for its details, long press it for quick actions.</li></ul></div><div class="shots"><figure><img src="img/en/calendar.jpg" alt="The calendar with the cycle ring" loading="lazy" width="560" height="1164"><figcaption>The calendar with the cycle ring</figcaption></figure><figure><img src="img/en/ring.jpg" alt="Tap the ring to see how the estimates are made" loading="lazy" width="560" height="1164"><figcaption>Tap the ring to see how the estimates are made</figcaption></figure><figure><img src="img/en/filter.jpg" alt="Show only the kinds of days you want" loading="lazy" width="560" height="1164"><figcaption>Show only the kinds of days you want</figcaption></figure></div></div></section><section class="chapter alt" id="log"><div class="wrap"><div class="text"><p class="eyebrow">Logging</p><h2>Log a period, a symptom or a pregnancy in a few taps</h2><p class="lead">The plus button offers the usual things. A long press does the fastest one for today.</p><ul><li>Log the start of a period, with an optional end date. Leave the end empty while the period is going on.</li><li>Set the flow strength for the whole period, and change it for a single day when you need to.</li><li>Log symptoms: cramps, mood and energy, mid-cycle pain, cervical mucus, basal body temperature and notes.</li><li>Log a pregnancy. It closes by itself when you log the first period after it.</li><li>Edit or delete from the day details, a single day or the whole record.</li></ul></div><div class="shots"><figure><img src="img/en/fab.jpg" alt="The plus button" loading="lazy" width="560" height="1164"><figcaption>The plus button</figcaption></figure><figure><img src="img/en/add_period.jpg" alt="Log a period" loading="lazy" width="560" height="1164"><figcaption>Log a period</figcaption></figure><figure><img src="img/en/day_fertile.jpg" alt="The details of a day" loading="lazy" width="560" height="1164"><figcaption>The details of a day</figcaption></figure><figure><img src="img/en/symptoms.jpg" alt="The symptoms of a day" loading="lazy" width="560" height="1164"><figcaption>The symptoms of a day</figcaption></figure><figure><img src="img/en/day_period.jpg" alt="A day with a logged period" loading="lazy" width="560" height="1164"><figcaption>A day with a logged period</figcaption></figure></div></div></section><section class="chapter" id="estimates"><div class="wrap"><div class="text"><p class="eyebrow">Estimates</p><h2>Estimates that say how sure they are</h2><p class="lead">PMS Flow estimates the next period, ovulation and the fertile window from your own history, and tells you how much to trust them.</p><ul><li>Confidence is shown as Low, Medium or High, based on how regular your past cycles were.</li><li>The standard fertile window has 6 days: five days before ovulation and the day of ovulation. The conservative mode shows a wider window when the timing is uncertain.</li><li>Gradual fertility only changes the strength of the colour, never which days are marked.</li><li>Irregular cycle mode is for variable cycles (stress, postpartum, perimenopause, PCOS) and uses a wider tolerance.</li><li>Show prediction range displays a window of dates instead of one exact day.</li></ul></div><div class="shots"><figure><img src="img/en/settings2.jpg" alt="The settings of the estimates" loading="lazy" width="560" height="1164"><figcaption>The settings of the estimates</figcaption></figure></div></div></section><section class="chapter alt" id="stats"><div class="wrap"><div class="text"><p class="eyebrow">Statistics</p><h2>Your history in numbers and charts</h2><p class="lead">Statistics show your whole history, and you can narrow it to the last 3, 6 or 12 months.</p><ul><li>An overview: the average cycle length, the average period length and the number of cycles and periods.</li><li>The most common flow strength, cramp level and mood.</li><li>Insights in plain words, for example when cramps tend to start before a period.</li><li>Charts of the cycle length over time, the period duration, the distribution of the flow strength, and the trends of cramps, mood and energy.</li></ul></div><div class="shots"><figure><img src="img/en/stats1.jpg" alt="The overview and the most common values" loading="lazy" width="560" height="1164"><figcaption>The overview and the most common values</figcaption></figure><figure><img src="img/en/stats2.jpg" alt="The cycle length and the period duration" loading="lazy" width="560" height="1164"><figcaption>The cycle length and the period duration</figcaption></figure><figure><img src="img/en/stats3.jpg" alt="The distribution of the flow strength" loading="lazy" width="560" height="1164"><figcaption>The distribution of the flow strength</figcaption></figure><figure><img src="img/en/stats4.jpg" alt="The trends of cramps, mood and energy" loading="lazy" width="560" height="1164"><figcaption>The trends of cramps, mood and energy</figcaption></figure></div></div></section><section class="chapter" id="shared"><div class="wrap"><div class="text"><p class="eyebrow">Sharing</p><h2>Share with a partner or family, without any cloud</h2><p class="lead">You can hand someone a read-only snapshot as a .pmsshare file. They see it, and they cannot change it.</p><ul><li>You choose what goes in: an alias, and whether symptoms and notes are included.</li><li>A file you receive opens as a separate read-only profile and is never mixed with your own records.</li><li>You can rename a profile, give it a relationship label, sort and filter the list and keep earlier versions from the same sender.</li></ul></div><div class="shots"><figure><img src="img/en/shared1.jpg" alt="The Shared tab before the first profile" loading="lazy" width="560" height="1164"><figcaption>The Shared tab before the first profile</figcaption></figure></div></div></section><section class="chapter alt" id="backup"><div class="wrap"><div class="text"><p class="eyebrow">Backup</p><h2>Backups you control</h2><p class="lead">You can save your records to a file, send them on, or let the app back them up every day.</p><ul><li>Choose CSV (two files: periods and symptoms) or JSON (one file, the complete backup), and a range of dates.</li><li>Save to a file writes the backup where you choose. Share sends the file itself to another app.</li><li>A backup password protects every new JSON backup, also the automatic one. Keep it safe, a protected backup cannot be opened without it. Without a password the app warns you in plain words.</li><li>The automatic backup saves a complete backup once a day into a folder you pick, or into the PMSFlow subfolder of the folder for downloaded files, and keeps the last 7 days.</li><li>Restoring asks whether to keep your records and add the new ones, or to replace the records on the same dates. Before a restore a copy of your current records is saved into the backup folder, and when that copy cannot be saved, the restore does not start.</li></ul></div><div class="shots"><figure><img src="img/en/backup1.jpg" alt="Create a backup" loading="lazy" width="560" height="1164"><figcaption>Create a backup</figcaption></figure><figure><img src="img/en/backup2.jpg" alt="The backup password and the automatic backup" loading="lazy" width="560" height="1164"><figcaption>The backup password and the automatic backup</figcaption></figure><figure><img src="img/en/backup3.jpg" alt="The folder for the automatic backup and the restore" loading="lazy" width="560" height="1164"><figcaption>The folder for the automatic backup and the restore</figcaption></figure></div></div></section><section class="chapter" id="settings"><div class="wrap"><div class="text"><p class="eyebrow">Settings</p><h2>Settings, group by group</h2><p class="lead">The gear at the top right opens the settings.</p><ul><li>General: the language (English or Czech), the theme (like the system, light or dark) and colours taken from your wallpaper on Android 12 and newer. The colours of the calendar stay the same.</li><li>Security: an app lock with biometric unlock or a PIN, asked for when you come back to the app.</li><li>Cycle predictions: the range of months to look ahead, gradual fertility, the fertility window mode, the prediction range and the irregular cycle mode.</li><li>Notifications: a period reminder (how many days before), a late period check, a symptom reminder at a time you choose and a fertile days reminder.</li><li>My data: backup and restore, clearing all data, an optional import of the basal body temperature from Health Connect (read only), and a page about how your data is handled.</li></ul></div><div class="shots"><figure><img src="img/en/settings1.jpg" alt="General and security" loading="lazy" width="560" height="1164"><figcaption>General and security</figcaption></figure><figure><img src="img/en/settings2.jpg" alt="The settings of the estimates" loading="lazy" width="560" height="1164"><figcaption>The settings of the estimates</figcaption></figure><figure><img src="img/en/settings3.jpg" alt="Notifications" loading="lazy" width="560" height="1164"><figcaption>Notifications</figcaption></figure><figure><img src="img/en/settings4.jpg" alt="My data" loading="lazy" width="560" height="997"><figcaption>My data</figcaption></figure></div></div></section><section class="chapter alt" id="help"><div class="wrap"><div class="text"><p class="eyebrow">Help</p><h2>Short answers inside the app</h2><p class="lead">The How-to tab has short, practical tips for common situations, and the info button at the top right shows the version.</p><ul><li>How to log a period, an ongoing period, the irregular cycle mode and how to read the fertile window.</li><li>The info dialog shows the version and the recent changes. The version from GitHub can also check for updates there.</li></ul></div><div class="shots"><figure><img src="img/en/howto1.jpg" alt="The How-to tab" loading="lazy" width="560" height="1164"><figcaption>The How-to tab</figcaption></figure><figure><img src="img/en/howto2.jpg" alt="Tips for everyday situations" loading="lazy" width="560" height="1164"><figcaption>Tips for everyday situations</figcaption></figure><figure><img src="img/en/about.jpg" alt="The info dialog with the version and recent changes" loading="lazy" width="560" height="1164"><figcaption>The info dialog with the version and recent changes</figcaption></figure></div></div></section><section class="chapter" id="privacy"><div class="wrap"><div class="text"><p class="eyebrow">Privacy</p><h2>What happens to your data</h2><p class="lead">Short and plain. The full text is in the privacy policy.</p><ul><li>All your records are stored on your phone. There is no account and the developer has no server that receives them.</li><li>There is no advertising and no analytics code in the app.</li><li>The version from Google Play makes no network connections. The APK from GitHub only asks GitHub whether a newer release exists, and sends no personal or cycle data.</li><li>Health Connect is read only and optional, and the readings stay on your phone.</li><li>The app is meant for people aged 13 and over.</li></ul><a class="privacy-link" href="https://mdiskuze.github.io/pmsflow/privacy-policy.html">Read the privacy policy</a></div></div></section></main><footer><div class="wrap"><a href="https://github.com/mdiskuze/pmsflow">Releases and issues on GitHub</a><a href="https://mdiskuze.github.io/pmsflow/privacy-policy.html">Privacy policy</a><a href="#top">Back to the top</a></div></footer><script>
+(function () {
+  // the chapter in view is marked in the chapter bar
+  var links = Array.prototype.slice.call(document.querySelectorAll('.chapters a'));
+  var map = {};
+  links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
+  if (!('IntersectionObserver' in window)) return;
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting && map[e.target.id]) {
+        links.forEach(function (a) { a.classList.remove('on'); });
+        map[e.target.id].classList.add('on');
+        var bar = document.querySelector('.chapters');
+        var a = map[e.target.id];
+        if (bar && a.offsetLeft + a.offsetWidth > bar.scrollLeft + bar.clientWidth || a.offsetLeft < bar.scrollLeft) {
+          bar.scrollTo({ left: a.offsetLeft - 20, behavior: 'smooth' });
+        }
+      }
+    });
+  }, { rootMargin: '-30% 0px -60% 0px' });
+  document.querySelectorAll('.chapter').forEach(function (s) { io.observe(s); });
+})();
+</script>
+</body>
+</html>

@@ -9,6 +9,9 @@ release downloads, issue reports, feedback, and the user guide.
 ➡️ **[Latest release](../../releases/latest)** — install the APK directly,
 or [open an issue](../../issues/new) to report a bug or suggest a feature.
 
+Guided tour with pictures of every screen and every setting:
+[English](https://mdiskuze.github.io/pmsflow/tour/) · [Česky](https://mdiskuze.github.io/pmsflow/tour/cs/)
+
 ---
 
 ## English
@@ -35,7 +38,9 @@ or [open an issue](../../issues/new) to report a bug or suggest a feature.
 - **Notifications.** Optional reminders for period start, fertile window,
   symptom logging, and a once-per-cycle late-period nudge.
 - **Backup and restore.** Export to CSV or JSON; import the same files
-  back. Your data, your control.
+  back. JSON backups can be protected with your own password, and the app
+  can back up by itself every day into a folder you choose. Your data,
+  your control.
 - **Read-only sharing with a partner or family.** Generate a `.pmsshare`
   snapshot they can open in their own app — no account, no cloud.
   The receiver sees your shared data but can't change it.
@@ -106,7 +111,8 @@ it publicly — contact the maintainer privately first.
 - **Notifikace.** Volitelné připomenutí menstruace, plodného okna,
   záznamu symptomů a jednorázové upozornění při zpožděné menstruaci.
 - **Záloha a obnova.** Export do CSV nebo JSON; import stejných souborů
-  zpět. Tvá data, tvoje kontrola.
+  zpět. Zálohy JSON můžeš chránit vlastním heslem a aplikace umí zálohovat
+  sama každý den do složky, kterou vybereš. Tvá data, tvoje kontrola.
 - **Sdílení s partnerem/rodinou jen ke čtení.** Vygeneruješ snímek
   `.pmsshare`, který si otevřou ve své vlastní aplikaci — bez účtu,
   bez cloudu. Příjemce vidí sdílená data, ale nemůže je změnit.

@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PMS Flow - prohlídka aplikace</title>
+<meta name="description" content="Sledování cyklu pro Android, které drží všechno v telefonu. Každá obrazovka a každé nastavení PMS Flow vysvětlené, s obrázky.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="cs_CZ">
+<meta property="og:title" content="PMS Flow - prohlídka aplikace">
+<meta property="og:description" content="Sledování menstruace, příznaky a odhady, které říkají, jak moc jim věřit. Bez účtu a bez cloudu.">
+<meta property="og:image" content="https://mdiskuze.github.io/pmsflow/tour/img/en/calendar.jpg">
+<link rel="canonical" href="https://mdiskuze.github.io/pmsflow/tour/cs/">
+<link rel="alternate" hreflang="en" href="https://mdiskuze.github.io/pmsflow/tour/">
+<link rel="alternate" hreflang="cs" href="https://mdiskuze.github.io/pmsflow/tour/cs/">
+<link rel="alternate" hreflang="x-default" href="https://mdiskuze.github.io/pmsflow/tour/">
+<style>
+:root{
+  --ground:#fbf8f5; --surface:#f3efea; --surface-2:#ece6df; --ink:#1d1b19; --ink-2:#57514b; --line:#ddd5cc;
+  --accent:#8a5200; --accent-ink:#ffffff; --peach:#fbe2c8;
+  --shadow:0 1px 2px rgba(60,40,20,.08),0 12px 32px -12px rgba(60,40,20,.28);
+  --radius:24px; --max:1120px;
+  --font:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --ground:#16130f; --surface:#211c17; --surface-2:#2b251f; --ink:#f3ebe3; --ink-2:#bdb2a6; --line:#3a322a;
+    --accent:#f0b56b; --accent-ink:#2a1700; --peach:#3a2a19; --shadow:0 12px 32px -12px rgba(0,0,0,.7);
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:120px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--ground);color:var(--ink);font:400 17px/1.6 var(--font);-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--accent)}
+h1,h2{line-height:1.12;letter-spacing:-.02em;margin:0}
+p{margin:0}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:8px}
+
+.top{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--ground) 90%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:16px;min-height:60px;padding-top:6px;padding-bottom:6px}
+.brand{font-weight:700;font-size:20px;letter-spacing:-.02em;display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none}
+.brand svg{width:28px;height:28px}
+.langs{margin-left:auto;display:flex;gap:2px}
+.langs a{font-size:13px;font-weight:700;letter-spacing:.06em;color:var(--ink-2);text-decoration:none;padding:10px 12px;min-height:44px;display:inline-flex;align-items:center;border-radius:999px}
+.langs a[aria-current="true"]{color:var(--ink);background:var(--surface-2)}
+.langs a:hover{background:var(--surface)}
+.chapters{border-top:1px solid var(--line);overflow-x:auto;scrollbar-width:none}
+.chapters::-webkit-scrollbar{display:none}
+.chapters .wrap{display:flex;flex-wrap:nowrap;gap:4px;padding-top:6px;padding-bottom:6px}
+.chapters a{white-space:nowrap;text-decoration:none;color:var(--ink-2);font-size:14px;font-weight:600;padding:9px 12px;border-radius:999px;min-height:40px;display:inline-flex;align-items:center}
+.chapters a:hover{background:var(--surface)}
+.chapters a.on{background:var(--peach);color:var(--ink)}
+
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+.lead{font-size:19px;color:var(--ink-2);max-width:60ch;margin-top:14px}
+.hero{padding:56px 0 40px;background:linear-gradient(180deg,var(--peach),var(--ground))}
+.hero h1{font-size:clamp(34px,6vw,60px);max-width:16ch}
+.pledges{list-style:none;padding:0;margin:26px 0 0;display:flex;flex-wrap:wrap;gap:10px}
+.pledges li{background:var(--ground);border:1px solid var(--line);border-radius:999px;padding:9px 16px;font-weight:600;font-size:15px}
+.note{margin-top:22px;font-size:15px;color:var(--ink-2);max-width:62ch}
+
+.chapter{padding:56px 0;border-top:1px solid var(--line)}
+.chapter .wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:40px;align-items:start}
+.chapter h2{font-size:clamp(26px,4vw,38px)}
+.chapter ul{padding-left:1.2em;margin:18px 0 0;display:grid;gap:10px}
+.chapter li::marker{color:var(--accent)}
+.shots{display:flex;flex-wrap:wrap;gap:18px;justify-content:center}
+figure{margin:0;width:min(100%,210px)}
+figure img{border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid var(--line)}
+figcaption{font-size:13.5px;color:var(--ink-2);margin-top:8px;line-height:1.4;text-align:center}
+.chapter.alt{background:var(--surface)}
+.privacy-link{display:inline-flex;margin-top:18px;background:var(--accent);color:var(--accent-ink);font-weight:700;text-decoration:none;padding:12px 20px;border-radius:999px;min-height:44px;align-items:center}
+footer{border-top:1px solid var(--line);padding:32px 0 48px;color:var(--ink-2);font-size:15px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px}
+@media (max-width:860px){
+  .chapter .wrap{grid-template-columns:1fr;gap:26px}
+  .chapter{padding:40px 0}
+  .shots{justify-content:flex-start}
+}
+@media (max-width:420px){figure{width:calc(50% - 9px)}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="#top" aria-label="PMS Flow"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C11 10 7 14.5 7 19.5a9 9 0 0 0 18 0C25 14.5 21 10 16 3z" fill="var(--accent)"/></svg> PMS Flow</a><nav class="langs" aria-label="Jazyk"><a href="../" hreflang="en" lang="en">EN</a><a href="./" hreflang="cs" lang="cs" aria-current="true">CS</a></nav></div><nav class="chapters" aria-label="Kapitoly"><div class="wrap"><a href="#calendar">Kalendář</a><a href="#log">Zápisy</a><a href="#estimates">Odhady</a><a href="#stats">Statistiky</a><a href="#shared">Sdílení</a><a href="#backup">Záloha</a><a href="#settings">Nastavení</a><a href="#help">Nápověda</a><a href="#privacy">Soukromí</a></div></nav></header><main id="top"><section class="hero"><div class="wrap"><p class="eyebrow">Sledování cyklu pro Android</p><h1>Sledování cyklu, které drží data v telefonu</h1><p class="lead">PMS Flow sleduje tvoje menstruace, příznaky a odhady. Všechno zůstává v telefonu, bez účtu a bez cloudu.</p><ul class="pledges"><li>Bez účtu a bez cloudu</li><li>Bez reklam a bez analytiky</li><li>Zálohy, které si chráníš vlastním heslem</li><li>Česky i anglicky</li></ul><p class="note">PMS Flow není zdravotnický prostředek. Odhady jsou jen odhady a nejsou antikoncepcí. Android 8.0 a novější.</p></div></section><section class="chapter" id="calendar"><div class="wrap"><div class="text"><p class="eyebrow">Kalendář</p><h2>Kalendář, který ukáže, kde v cyklu jsi</h2><p class="lead">Kalendář se otevře kruhem cyklu: den běžícího cyklu, fáze, ve které jsi, a odhad další menstruace.</p><ul><li>Barvy rozlišují dny: menstruace, odhad menstruace (čárkovaný obrys), plodné okno, ovulace, příznaky a těhotenství.</li><li>Dny stejného druhu tvoří jeden pruh, takže menstruaci i plodné okno přečteš jedním pohledem.</li><li>Legenda pod měsícem zapíná a vypíná druhy dnů. Tlačítko filtru vedle Dnes otevře stejné přepínače v jednom seznamu.</li><li>Klepnutím na den otevřeš jeho detail, dlouhým podržením rychlé akce.</li></ul></div><div class="shots"><figure><img src="../img/cs/calendar.jpg" alt="Kalendář s kruhem cyklu" loading="lazy" width="560" height="1164"><figcaption>Kalendář s kruhem cyklu</figcaption></figure><figure><img src="../img/cs/ring.jpg" alt="Klepnutím na kruh zjistíš, jak se odhady dělají" loading="lazy" width="560" height="1164"><figcaption>Klepnutím na kruh zjistíš, jak se odhady dělají</figcaption></figure><figure><img src="../img/cs/filter.jpg" alt="Zobraz jen ty druhy dnů, které chceš" loading="lazy" width="560" height="1164"><figcaption>Zobraz jen ty druhy dnů, které chceš</figcaption></figure></div></div></section><section class="chapter alt" id="log"><div class="wrap"><div class="text"><p class="eyebrow">Zápisy</p><h2>Zapiš menstruaci, příznak nebo těhotenství několika klepnutími</h2><p class="lead">Tlačítko plus nabízí běžné věci. Dlouhé podržení udělá to nejrychlejší pro dnešek.</p><ul><li>Zapiš začátek menstruace s volitelným datem konce. Dokud menstruace probíhá, nech konec prázdný.</li><li>Nastav sílu krvácení pro celou menstruaci a podle potřeby ji změň pro jediný den.</li><li>Zapiš příznaky: bolesti břicha, náladu a energii, bolest uprostřed cyklu, cervikální hlen, bazální tělesnou teplotu a poznámky.</li><li>Zapiš těhotenství. Samo se uzavře, když zapíšeš první menstruaci po něm.</li><li>Z detailu dne můžeš upravit nebo smazat, jen ten den, nebo celý záznam.</li></ul></div><div class="shots"><figure><img src="../img/cs/fab.jpg" alt="Tlačítko plus" loading="lazy" width="560" height="1164"><figcaption>Tlačítko plus</figcaption></figure><figure><img src="../img/cs/add_period.jpg" alt="Zapsat menstruaci" loading="lazy" width="560" height="1164"><figcaption>Zapsat menstruaci</figcaption></figure><figure><img src="../img/cs/day_fertile.jpg" alt="Detail dne" loading="lazy" width="560" height="1164"><figcaption>Detail dne</figcaption></figure><figure><img src="../img/cs/symptoms.jpg" alt="Příznaky dne" loading="lazy" width="560" height="1164"><figcaption>Příznaky dne</figcaption></figure><figure><img src="../img/cs/day_period.jpg" alt="Den se zapsanou menstruací" loading="lazy" width="560" height="1164"><figcaption>Den se zapsanou menstruací</figcaption></figure></div></div></section><section class="chapter" id="estimates"><div class="wrap"><div class="text"><p class="eyebrow">Odhady</p><h2>Odhady, které říkají, jak moc jim věřit</h2><p class="lead">PMS Flow odhaduje další menstruaci, ovulaci a plodné okno z tvé vlastní historie a říká, jak moc jim věřit.</p><ul><li>Spolehlivost je vidět jako Nízká, Střední nebo Vysoká podle toho, jak pravidelné byly tvoje cykly.</li><li>Standardní plodné okno má 6 dnů: pět dnů před ovulací a den ovulace. Konzervativní režim ukáže širší okno, když je termín nejistý.</li><li>Graduální plodnost mění jen sílu barvy, nikdy to, které dny jsou označené.</li><li>Režim nepravidelného cyklu je pro proměnlivé cykly (stres, po porodu, perimenopauza, PCOS) a používá širší toleranci.</li><li>Zobrazit rozsah odhadu ukáže časové okno místo jednoho přesného dne.</li></ul></div><div class="shots"><figure><img src="../img/cs/settings2.jpg" alt="Nastavení odhadů" loading="lazy" width="560" height="1164"><figcaption>Nastavení odhadů</figcaption></figure></div></div></section><section class="chapter alt" id="stats"><div class="wrap"><div class="text"><p class="eyebrow">Statistiky</p><h2>Tvoje historie v číslech a grafech</h2><p class="lead">Statistiky ukazují celou tvou historii a jde ji zúžit na poslední 3, 6 nebo 12 měsíců.</p><ul><li>Přehled: průměrná délka cyklu, průměrná délka menstruace a počet cyklů a menstruací.</li><li>Nejčastější síla krvácení, bolest břicha a nálada.</li><li>Postřehy jednoduchými slovy, například kdy se křeče objevují před menstruací.</li><li>Grafy délky cyklu v čase, délky menstruace, rozložení intenzity a trendy bolestí břicha, nálady a energie.</li></ul></div><div class="shots"><figure><img src="../img/cs/stats1.jpg" alt="Přehled a nejčastější hodnoty" loading="lazy" width="560" height="1164"><figcaption>Přehled a nejčastější hodnoty</figcaption></figure><figure><img src="../img/cs/stats2.jpg" alt="Délka cyklu a délka menstruace" loading="lazy" width="560" height="1164"><figcaption>Délka cyklu a délka menstruace</figcaption></figure><figure><img src="../img/cs/stats3.jpg" alt="Rozložení intenzity krvácení" loading="lazy" width="560" height="1164"><figcaption>Rozložení intenzity krvácení</figcaption></figure><figure><img src="../img/cs/stats4.jpg" alt="Trendy bolestí, nálady a energie" loading="lazy" width="560" height="1164"><figcaption>Trendy bolestí, nálady a energie</figcaption></figure></div></div></section><section class="chapter" id="shared"><div class="wrap"><div class="text"><p class="eyebrow">Sdílení</p><h2>Sdílej s partnerem nebo rodinou, bez jakéhokoli cloudu</h2><p class="lead">Můžeš někomu předat snímek jen pro čtení jako soubor .pmsshare. Uvidí ho, ale nemůže ho měnit.</p><ul><li>Ty vybereš, co v něm bude: přezdívku a zda se přidají příznaky a poznámky.</li><li>Soubor, který dostaneš, se otevře jako samostatný profil jen pro čtení a nikdy se nesmíchá s tvými záznamy.</li><li>Profil jde přejmenovat, dát mu označení vztahu, seznam řadit a filtrovat a ponechat starší verze od stejného odesílatele.</li></ul></div><div class="shots"><figure><img src="../img/cs/shared1.jpg" alt="Záložka Sdílení před prvním profilem" loading="lazy" width="560" height="1164"><figcaption>Záložka Sdílení před prvním profilem</figcaption></figure></div></div></section><section class="chapter alt" id="backup"><div class="wrap"><div class="text"><p class="eyebrow">Záloha</p><h2>Zálohy, které máš ve své moci</h2><p class="lead">Záznamy si můžeš uložit do souboru, poslat je dál, nebo nechat aplikaci zálohovat každý den.</p><ul><li>Vyber CSV (dva soubory: menstruace a příznaky) nebo JSON (jeden soubor, kompletní záloha) a rozsah dat.</li><li>Uložit do souboru zapíše zálohu, kam vybereš. Sdílet pošle samotný soubor jiné aplikaci.</li><li>Heslo zálohy chrání každou novou zálohu JSON, i tu automatickou. Dobře si ho uschovej, chráněná záloha se bez něj otevřít nedá. Bez hesla tě aplikace srozumitelně varuje.</li><li>Automatická záloha jednou denně uloží kompletní zálohu do složky, kterou vybereš, nebo do podsložky PMSFlow ve složce pro stažené soubory, a nechá posledních 7 dní.</li><li>Při obnově si vybereš, zda ponechat své záznamy a přidat nové, nebo nahradit záznamy ve stejných dnech. Před obnovou se do složky záloh uloží kopie tvých současných záznamů, a když se nepodaří uložit, obnova se nespustí.</li></ul></div><div class="shots"><figure><img src="../img/cs/backup1.jpg" alt="Vytvoření zálohy" loading="lazy" width="560" height="1164"><figcaption>Vytvoření zálohy</figcaption></figure><figure><img src="../img/cs/backup2.jpg" alt="Heslo zálohy a automatická záloha" loading="lazy" width="560" height="1164"><figcaption>Heslo zálohy a automatická záloha</figcaption></figure><figure><img src="../img/cs/backup3.jpg" alt="Složka pro automatickou zálohu a obnova" loading="lazy" width="560" height="1164"><figcaption>Složka pro automatickou zálohu a obnova</figcaption></figure></div></div></section><section class="chapter" id="settings"><div class="wrap"><div class="text"><p class="eyebrow">Nastavení</p><h2>Nastavení, skupinu po skupině</h2><p class="lead">Ozubené kolo vpravo nahoře otevře nastavení.</p><ul><li>Obecné: jazyk (čeština nebo angličtina), motiv (podle systému, světlý nebo tmavý) a barvy převzaté z tapety na Androidu 12 a novějším. Barvy v kalendáři zůstávají stejné.</li><li>Zabezpečení: zámek aplikace s biometrikou nebo PINem, který se vyžaduje při návratu do aplikace.</li><li>Odhady cyklu: rozsah měsíců dopředu, graduální plodnost, režim plodného okna, rozsah odhadu a režim nepravidelného cyklu.</li><li>Notifikace: připomínka menstruace (kolik dnů předem), upozornění při zpoždění menstruace, připomínka příznaků v čase, který si vybereš, a upozornění na plodné dny.</li><li>Moje data: záloha a obnova, smazání všech dat, volitelný import bazální teploty z Health Connect (jen čtení) a stránka o tom, jak se s daty nakládá.</li></ul></div><div class="shots"><figure><img src="../img/cs/settings1.jpg" alt="Obecné a zabezpečení" loading="lazy" width="560" height="1164"><figcaption>Obecné a zabezpečení</figcaption></figure><figure><img src="../img/cs/settings2.jpg" alt="Nastavení odhadů" loading="lazy" width="560" height="1164"><figcaption>Nastavení odhadů</figcaption></figure><figure><img src="../img/cs/settings3.jpg" alt="Notifikace" loading="lazy" width="560" height="1164"><figcaption>Notifikace</figcaption></figure><figure><img src="../img/cs/settings4.jpg" alt="Moje data" loading="lazy" width="560" height="997"><figcaption>Moje data</figcaption></figure></div></div></section><section class="chapter alt" id="help"><div class="wrap"><div class="text"><p class="eyebrow">Nápověda</p><h2>Krátké odpovědi přímo v aplikaci</h2><p class="lead">Záložka Návody má krátké praktické tipy na běžné situace a tlačítko informací vpravo nahoře ukáže verzi.</p><ul><li>Jak zapsat menstruaci, probíhající menstruaci, režim nepravidelného cyklu a jak číst plodné okno.</li><li>Dialog informací ukazuje verzi a poslední změny. Verze z GitHubu tam umí také zkontrolovat aktualizace.</li></ul></div><div class="shots"><figure><img src="../img/cs/howto1.jpg" alt="Záložka Návody" loading="lazy" width="560" height="1164"><figcaption>Záložka Návody</figcaption></figure><figure><img src="../img/cs/howto2.jpg" alt="Tipy na běžné situace" loading="lazy" width="560" height="1164"><figcaption>Tipy na běžné situace</figcaption></figure><figure><img src="../img/cs/about.jpg" alt="Dialog informací s verzí a posledními změnami" loading="lazy" width="560" height="1164"><figcaption>Dialog informací s verzí a posledními změnami</figcaption></figure></div></div></section><section class="chapter" id="privacy"><div class="wrap"><div class="text"><p class="eyebrow">Soukromí</p><h2>Co se děje s tvými daty</h2><p class="lead">Stručně a srozumitelně. Úplné znění je v zásadách ochrany soukromí.</p><ul><li>Všechny tvoje záznamy jsou uložené v telefonu. Neexistuje účet a vývojář nemá žádný server, který by je přijímal.</li><li>V aplikaci není žádná reklama ani analytický kód.</li><li>Verze z Google Play nenavazuje žádná síťová spojení. APK z GitHubu se jen ptá GitHubu, jestli existuje novější verze, a neposílá žádná osobní data ani data o cyklu.</li><li>Health Connect je jen ke čtení a volitelný a načtené hodnoty zůstávají v telefonu.</li><li>Aplikace je určená lidem od 13 let.</li></ul><a class="privacy-link" href="https://mdiskuze.github.io/pmsflow/privacy-policy.html">Přečíst zásady ochrany soukromí</a></div></div></section></main><footer><div class="wrap"><a href="https://github.com/mdiskuze/pmsflow">Verze a hlášení problémů na GitHubu</a><a href="https://mdiskuze.github.io/pmsflow/privacy-policy.html">Zásady ochrany soukromí</a><a href="#top">Zpět nahoru</a></div></footer><script>
+(function () {
+  // the chapter in view is marked in the chapter bar
+  var links = Array.prototype.slice.call(document.querySelectorAll('.chapters a'));
+  var map = {};
+  links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
+  if (!('IntersectionObserver' in window)) return;
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting && map[e.target.id]) {
+        links.forEach(function (a) { a.classList.remove('on'); });
+        map[e.target.id].classList.add('on');
+        var bar = document.querySelector('.chapters');
+        var a = map[e.target.id];
+        if (bar && a.offsetLeft + a.offsetWidth > bar.scrollLeft + bar.clientWidth || a.offsetLeft < bar.scrollLeft) {
+          bar.scrollTo({ left: a.offsetLeft - 20, behavior: 'smooth' });
+        }
+      }
+    });
+  }, { rootMargin: '-30% 0px -60% 0px' });
+  document.querySelectorAll('.chapter').forEach(function (s) { io.observe(s); });
+})();
+</script>
+</body>
+</html>
